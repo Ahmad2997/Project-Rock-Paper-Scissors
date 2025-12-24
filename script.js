@@ -2,20 +2,21 @@
 //rock=0,paper=1,scissors=2
 let ComputerScore=0;
 let HumanScore=0;
-const humanChoiceString=getHumanChoice().toLowerCase(); 
-let humanChoice;
-switch (humanChoiceString){
-    case "rock" : humanChoice=0;
-    break;
-    case "paper" : humanChoice=1;
-    break;
-    case "scissors" : humanChoice=2
-    break;
-}
-console.log("human: " + humanChoice);
-const computerChoice=getComputerChoice();
-console.log("computer: " + computerChoice);
-console.log(playRound(humanChoice,computerChoice));
+playGame();
+//const humanChoiceString=getHumanChoice().toLowerCase(); 
+//let humanChoice;
+//switch (humanChoiceString){
+//    case "rock" : humanChoice=0;
+//    break;
+//    case "paper" : humanChoice=1;
+//    break;
+//    case "scissors" : humanChoice=2
+//    break;
+//}
+//console.log("human: " + humanChoice);
+//const computerChoice=getComputerChoice();
+//console.log("computer: " + computerChoice);
+//console.log(playRound(humanChoice,computerChoice));
 function getComputerChoice(){
     return  getRandomInt(3);
 }
@@ -42,4 +43,26 @@ function playRound(humanChoice,computerChoice){
     }
  return "didn't finish the round";
 
+}
+function playGame(){
+    for (let i=0; i<5; i++ ){
+        console.log(`round ${i+1}`);
+        const humanChoiceString=getHumanChoice().toLowerCase(); 
+        let humanChoice;
+        switch (humanChoiceString){
+            case "rock" : humanChoice=0;
+            break;
+            case "paper" : humanChoice=1;
+            break;
+            case "scissors" : humanChoice=2
+            break;
+        }
+    console.log("human choice: " + humanChoice);
+    const computerChoice=getComputerChoice();
+    console.log("computer choice: " + computerChoice);
+    console.log(playRound(humanChoice,computerChoice));
+    console.log("human score: "+ HumanScore);
+    console.log("computer score: "+ComputerScore);
+    console.log("---------------");
+    }
 }
