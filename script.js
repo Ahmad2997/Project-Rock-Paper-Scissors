@@ -30,14 +30,14 @@ function getRandomInt(max) {
 function playRound(humanChoice,computerChoice){
     switch (humanChoice){
         case 0 : if (computerChoice==0) return "Tie";
-                 if (computerChoice==1) return "Computer wins"; 
-                 if (computerChoice==2) return "Player wins";
+                 if (computerChoice==1) {ComputerScore++; return "Computer wins"; }
+                 if (computerChoice==2) {HumanScore++; return "Player wins";}
         case 1 : if (computerChoice==1) return "Tie";
-                 if (computerChoice==2) return "Computer wins"; 
-                 if (computerChoice==0) return "Player wins";
+                 if (computerChoice==2) {ComputerScore++; return "Computer wins"; } 
+                 if (computerChoice==0) {HumanScore++; return "Player wins";}
         case 2 : if (computerChoice==2) return "Tie";
-                 if (computerChoice==0) return "Computer wins"; 
-                 if (computerChoice==1) return "Player wins";
+                 if (computerChoice==0) {ComputerScore++; return "Computer wins"; } 
+                 if (computerChoice==1) {HumanScore++; return "Player wins";}
         
     }
  return "didn't finish the round";
