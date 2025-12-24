@@ -2,7 +2,16 @@
 //rock=0,paper=1,scissors=2
 let ComputerScore=0;
 let HumanScore=0;
-const humanChoice=parseInt(getHumanChoice()); 
+const humanChoiceString=getHumanChoice().toLowerCase(); 
+let humanChoice;
+switch (humanChoiceString){
+    case "rock" : humanChoice=0;
+    break;
+    case "paper" : humanChoice=1;
+    break;
+    case "scissors" : humanChoice=2
+    break;
+}
 console.log("human: " + humanChoice);
 const computerChoice=getComputerChoice();
 console.log("computer: " + computerChoice);
